@@ -10,6 +10,22 @@
 @import url(css/animate.css);
 @import url(css/magnific-popup.css);
 /* :: 3.0 Base CSS */
+
+.article-title {
+  color: #444444;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid black
+}
+
+
 * {
   margin: 0;
   padding: 0; }

@@ -1,96 +1,47 @@
-{% extends "layout.html" %}
+{% extends 'header.html' %}
 {% block content %}
- <div class="mag-login-area py-5">
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+{#    <section class="breadcrumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/40.jpg);">#}
+{#        <div class="container h-100">#}
+{#            <div class="row h-100 align-items-center">#}
+{#                <div class="col-12">#}
+{#                    <div class="breadcrumb-content">#}
+{#                        <h2>Register</h2>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+    <!-- ##### Breadcrumb Area End ##### -->
+
+    <!-- ##### Login Area Start ##### -->
+    <div class="mag-login-area py-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-12">
                     <div class="login-content bg-white p-30 box-shadow">
                         <!-- Section Title -->
                         <div class="section-heading">
-                            <h5>SIGN UP!</h5>
+                            <h5>Great to have you back!</h5>
                         </div>
 
-                        <form action="" method="post">
-                            {{ form.hidden_tag() }}
-                            <fieldset class="form-group">
-                                <div class="form-group">
-                               <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email or User Name">-->
-                                First Name
-                                  {% if form.first.errors %}
-                                    {{ form.first(class="form-control form-control-lg is-invalid") }}
-                                        <div class="invalid-feedback">
-                                             {% for error in form.first.errors %}
-                                            <span>{{ error }}</span>
-                                            {% endfor %}
-                                             </div>
-                                            {% else %}
-                                            {{ form.first(class="form-control form-control-lg") }}
-                                            {% endif %}
-                                 <div class="form-group">
-                               <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email or User Name">-->
-                               Last Name
-                                {% if form.last.errors %}
-                                    {{ form.last(class="form-control form-control-lg is-invalid") }}
-                                        <div class="invalid-feedback">
-                                             {% for error in form.last.errors %}
-                                            <span>{{ error }}</span>
-                                            {% endfor %}
-                                             </div>
-                                            {% else %}
-                                            {{ form.last(class="form-control form-control-lg") }}
-                                            {% endif %}
-                                        </div>
-                                 <div class="form-group">
-                               <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email or User Name">-->
-                                Email id
-                                {% if form.email.errors %}
-                                    {{ form.email(class="form-control form-control-lg is-invalid") }}
-                                        <div class="invalid-feedback">
-                                             {% for error in form.email.errors %}
-                                            <span>{{ error }}</span>
-                                            {% endfor %}
-                                             </div>
-                                            {% else %}
-                                            {{ form.email(class="form-control form-control-lg") }}
-                                            {% endif %}
-                                        </div>
-                                 <div class="form-group">
-                               <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email or User Name">-->
-                                Password
-                                {% if form.password.errors %}
-                                    {{ form.password(class="form-control form-control-lg is-invalid") }}
-                                        <div class="invalid-feedback">
-                                             {% for error in form.password.errors %}
-                                            <span>{{ error }}</span>
-                                            {% endfor %}
-                                             </div>
-                                            {% else %}
-                                            {{ form.password(class="form-control form-control-lg") }}
-                                            {% endif %}
-                                </div>
-                                 <div class="form-group">
-                               <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email or User Name">-->
-                                Confirm Password
-                                {% if form.confirm_password.errors %}
-                                    {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
-                                        <div class="invalid-feedback">
-                                             {% for error in form.confirm_password.errors %}
-                                            <span>{{ error }}</span>
-                                            {% endfor %}
-                                             </div>
-                                            {% else %}
-                                            {{ form.confirm_password(class="form-control form-control-lg") }}
-                                            {% endif %}
-                                        </div>
-                                </fieldset>
-                            <div class="form-group">
-                            {{ form.submit(class="btn mag-btn mt-30") }}
-                            </div>
-                        </form>
+                        <form action="/reg1" method="post" enctype="multipart/form-data">
 
+                            <div class="form-group">
+                                Upload pan card : <input type="file" class="form-control" name=file>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="exampleInputPassword1" name ="pass" placeholder="Password">
+                            </div>
+
+                            <button type="submit" class="btn mag-btn mt-30">Register</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-{%  endblock content %}
+{% endblock %}
+    <!-- ##### Login Area End ##### -->
+
